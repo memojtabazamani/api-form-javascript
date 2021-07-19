@@ -12,13 +12,13 @@
 		<form >
 		  <div class="form-group">
 		    <label for="userNameText">Username : </label>
-			<input type="text" id="userNameText" class="form-control" aria-describedby="userNameHelpBlock" required>
+			<input type="text" id="userNameText" name="userName" class="form-control" aria-describedby="userNameHelpBlock" required>
 			<small id="userNameHelpBlock" class="form-text text-muted"></small>
 		  </div>
 		  <div class="form-group">
 		    <label for="ageText">Age : </label>
-			<input type="number" id="ageText" class="form-control" aria-describedby="userNameHelpBlock" min="18" max="30" required>
-			<small id="ageTextHelpBlock" class="form-text text-muted"></small>
+			<input type="number" id="ageText" name="age" class="form-control" aria-describedby="ageTextHelpBlock" min="18" max="30" required>
+			<small id="ageHelpBlock" class="form-text text-muted"></small>
 		  </div>
 		  <div class="form-group">
 		  	<button class="btn btn-block btn-success" type="button" onclick="validationForm()">Submit</button>

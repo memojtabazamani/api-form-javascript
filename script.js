@@ -1,24 +1,22 @@
-var userNameText = document.getElementById("userNameText");
-var helpBlock = document.getElementById("userNameHelpBlock");
-
-var ageText = document.getElementById("ageText");
-var ageTextHelpBlock = document.getElementById("ageTextHelpBlock");
-
 function validationForm(e) {
-	message = helpBlock.innerHTML = ageTextHelpBlock.innerHTML = "";
-	if(userNameText.validity.valueMissing) {
-		message = "Field must be entred";	
-	} else if(userNameText.validity.patternMismatch) {
-		message = "Field Pattern in invalid!";
-	} else if(userNameText.validity.rangeOverflow) {
-		message = "Field Greater than its max number.";
-	} else if(userNameText.validity.rangeUnderflow) {
-		message = "Field Less than its min.";
-	} else if(userNameText.validity.toLong) {
-		message = "Field value exceeds its maxLength attribute.";
+	var inputs = document.getElementsByTagName("input");
+	// return;
+	for (var i = 0; i < inputs.length; i++) {
+		var input = inputs[i];
+		var message = "";
+		var blockHint = document.getElementById(input.name === "" ? input.id : input.name + "HelpBlock")
+		if(input.validity.valueMissing) {
+			message = "Field must be entred";	
+		} else if(input.validity.patternMismatch) {
+			message = "Field Pattern in invalid!";
+		} else if(input.validity.rangeOverflow) {
+			message = "Field Greater than its max number.";
+		} else if(input.validity.rangeUnderflow) {
+			message = "Field Less than its min.";
+		} else if(input.validity.toLong) {
+			message = "Field value exceeds its maxLength attribute.";
+		}
+		input.setCustomValidity(message);
+		blockHint.innerHTML = message;
 	}
-
-	userNameText.setCustomValidity(message);
-	helpBlock.innerHTML = userNameText.validationMessage;
-	
 }

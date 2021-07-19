@@ -9,13 +9,23 @@
 </head>
 <body>
 	<div class="container mt-2">
-		<form>
+		<form >
 		  <div class="form-group">
-		    <label for="userName">Username : </label>
-			<input type="password" id="userName" class="form-control" aria-describedby="userNameHelpBlock">
+		    <label for="userNameText">Username : </label>
+			<input type="text" id="userNameText" class="form-control" aria-describedby="userNameHelpBlock" required>
 			<small id="userNameHelpBlock" class="form-text text-muted"></small>
+		  </div>
+		  <div class="form-group">
+		    <label for="ageText">Age : </label>
+			<input type="number" id="ageText" class="form-control" aria-describedby="userNameHelpBlock" min="18" max="30" required>
+			<small id="ageTextHelpBlock" class="form-text text-muted"></small>
+		  </div>
+		  <div class="form-group">
+		  	<button class="btn btn-block btn-success" type="button" onclick="validationForm()">Submit</button>
 		  </div>
 		</form>
 	</div>
+
+	<script src="script.js"></script>
 </body>
 </html>
